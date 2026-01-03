@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for vilaw-be-apbksg on 2026-01-03T05:48:12Z
+# fly.toml app configuration file generated for vilaw-be-tdr09g on 2026-01-03T06:07:41Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'vilaw-be-apbksg'
+app = 'vilaw-be-tdr09g'
 primary_region = 'sin'
 
 [build]
