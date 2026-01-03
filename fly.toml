@@ -1,15 +1,15 @@
-# fly.toml app configuration file generated for vilaw-be-tdr09g on 2026-01-03T06:07:41Z
+# fly.toml app configuration file generated for vilaw-be-b-zykg on 2026-01-03T06:16:30Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'vilaw-be-tdr09g'
+app = 'vilaw-be-b-zykg'
 primary_region = 'sin'
 
 [build]
 
 [http_service]
-  internal_port = 3000
+  internal_port = 8080
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
