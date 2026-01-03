@@ -228,7 +228,7 @@ export class UsersService {
     //send email
     this.mailerService.sendMail({
       to: user.email, // list of receivers
-      subject: 'Change your password account at @hoidanit', // Subject line
+      subject: 'Change your password account at @VilawLegisAi', // Subject line
       template: "register",
       context: {
         name: user?.username ?? user.email,
