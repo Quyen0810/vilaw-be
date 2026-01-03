@@ -6,25 +6,29 @@ import { ValidationPipe } from '@nestjs/common';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
-  const port = configService.get('PORT') || 3000;
+
+  const port = Number(configService.get('PORT')) || 3000;
+
   app.setGlobalPrefix('api/v1', { exclude: [''] });
 
-  app.useGlobalPipes(new ValidationPipe({
-    whitelist: true,
-    forbidNonWhitelisted: true,
-    transform: true,
-  }));
-  
-  //config cors
-  app.enableCors(
-    {
-      "origin": true ,
-      "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-      "preflightContinue": false,
-      credentials: true
-    }
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      forbidNonWhitelisted: true,
+      transform: true,
+    }),
   );
 
-  await app.listen(port);
+  app.enableCors({
+    origin: true,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false,
+    credentials: true,
+  });
+
+  // ⭐ QUAN TRỌNG NHẤT
+  await app.listen(port, '0.0.0.0');
+
+  console.log(`🚀 Server running on 0.0.0.0:${port}`);
 }
 bootstrap();
