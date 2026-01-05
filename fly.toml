@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for vilaw-be-qa-0lq on 2026-01-03T05:05:13Z
+# fly.toml app configuration file generated for vilaw-be-b-zykg on 2026-01-03T06:16:30Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'vilaw-be-qa-0lq'
+app = 'vilaw-be-b-zykg'
 primary_region = 'sin'
 
 [build]
