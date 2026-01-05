@@ -7,9 +7,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
 
-  const port = Number(configService.get('PORT')) || 3000;
+  const port = Number(configService.get('PORT')) || 8080;
 
-  app.setGlobalPrefix('api/v1', { exclude: [''] });
+  app.setGlobalPrefix('api/v1', { exclude: ['/health', '/'] });
 
   app.useGlobalPipes(
     new ValidationPipe({
