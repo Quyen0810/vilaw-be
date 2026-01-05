@@ -13,6 +13,7 @@ import { JwtAuthGuard } from '@/auth/passport/jwt-auth.guard';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 import { TransformInterceptor } from '@/core/transform.interceptor';
+import { HealthController } from '@/modules/health/health.controller';
 
 @Module({
   imports: [
@@ -62,7 +63,7 @@ import { TransformInterceptor } from '@/core/transform.interceptor';
     
     
   ],
-  controllers: [AppController],
+  controllers: [AppController, HealthController],
   providers: [
     AppService,
     {
